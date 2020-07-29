@@ -1,4 +1,3 @@
-#! /user/bin/env zsh
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -73,7 +72,7 @@ HIST_STAMPS="%H:%M:%S %d/%m/%Y"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 # Includes oh-my-zsh framework
-[[ -v ZSH ]] && source $ZSH/oh-my-zsh.sh
+test -f "$ZSH/oh-my-zsh.sh" && source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 

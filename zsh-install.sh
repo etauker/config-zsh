@@ -57,20 +57,22 @@ echo "(OK) sourced zsh local variables successfully"
 EOF
 
 ZSHRC_ENTRY="source \"$ZSH_DIR/$ZSH_INIT_FILENAME\" \"$LOCAL_VARIABLE_FILE\""
-echo "$ZSHRC_ENTRY" >> "$ZSHRC_FILE"
-source $ZSHRC_FILE
+echo "$ZSHRC_ENTRY" > "$ZSHRC_FILE"
 
+# change default shell to zsh
+chsh -s $(which zsh)
 
-
-# # chsh -s $(which zsh)
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install ohmyzsh, homebrew and antigen
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-# cd && curl -L git.io/antigen > antigen.zsh
+cd && curl -L git.io/antigen > antigen.zsh
 
-# # install zsh plugins
-# cd $PROJECT_DIR
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-# git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+# install zsh plugins
+cd $PROJECT_DIR
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
-# # symlink themes from config directory
-# ln -s $ZSH_DIR/themes/* $ZSH_CUSTOM/themes
+# symlink themes from config directory
+ln -s $ZSH_DIR/themes/* $ZSH_CUSTOM/themes
+
+source "$ZSHRC_FILE"
