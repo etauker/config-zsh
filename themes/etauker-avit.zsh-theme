@@ -2,10 +2,10 @@
 
 # settings
 # (%~ = directory)
-typeset +H _current_dir="%{$fg_bold[blue]%}%~%{$reset_color%} "
-typeset +H _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
-typeset +H _hist_no="%{$fg_bold[grey]%}%h%{$reset_color%}"
-typeset +H _current_time="%{$fg_bold[red]%}%D{%H:%M:%S}%{$reset_color%}"
+typeset +H _current_dir="%{$FG[041]%}%~%{$reset_color%} "
+typeset +H _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
+typeset +H _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+typeset +H _current_time="%{$FG[160]%}%D{%H:%M:%S}%{$reset_color%}"
 
 PROMPT='
 ${_current_time} $(_user_host) ${_current_dir} $(git_prompt_info) $(ruby_prompt_info)
@@ -20,7 +20,7 @@ function _user_host() {
   if [[ -n $SSH_CONNECTION ]]; then
     me="%n@%m"
   fi
-  echo "%{$fg_bold[yellow]%}$me%{$reset_color%}"
+  echo "%{$fg[yellow]%}$me%{$reset_color%}"
 }
 
 # Determine the time since last commit. If branch is clean,
@@ -56,7 +56,7 @@ function _git_time_since_commit() {
 MODE_INDICATOR="%{$fg_bold[yellow]%}❮%{$reset_color%}%{$fg_bold[yellow]%}❮❮%{$reset_color%}"
 
 # Git prompt settings
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_bold[red]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}✔%{$reset_color%}"

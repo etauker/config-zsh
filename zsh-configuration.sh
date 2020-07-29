@@ -100,5 +100,14 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# configure history
+export HISTCONTROL=ignoreboth # ignorespace ignoredups
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+PROMPT_COMMAND="history -a"
+# shopt -s histappend
+# shopt -s cmdhist
+
 
 echo "(OK) sourced zsh configuration successfully"
