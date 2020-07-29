@@ -73,6 +73,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
 # symlink themes from config directory
-ln -s $ZSH_DIR/themes/* $ZSH_CUSTOM/themes
+mkdir $ZSH_CUSTOM/themes
+ln -s "$ZSH_DIR/themes/"* $ZSH_CUSTOM/themes/
 
 source "$ZSHRC_FILE"
