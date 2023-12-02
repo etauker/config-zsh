@@ -65,7 +65,7 @@ EOF
 
 cat > "$ZSHRC_FILE" << EOF
 #! /user/bin/env zsh
-test -f "$LOCAL_VARIABLE_FILE" && source "LOCAL_VARIABLE_FILE"
+test -f "$LOCAL_VARIABLE_FILE" && source "$LOCAL_VARIABLE_FILE"
 source "$ZSH_DIR/$ZSH_INIT_FILENAME" "$LOCAL_VARIABLE_FILE"
 test -f "\$ZSH_DIR/zsh-configuration.sh" && source "\$ZSH_DIR/zsh-configuration.sh"
 EOF
