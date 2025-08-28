@@ -7,7 +7,7 @@ UPDATE_SUCCESS_MESSAGE="'(OK) zsh setting update successful'"
 alias update="source \
 \"$ZSH_DIR/$ZSH_INIT_FILENAME\" \
 \"$ZSH_DIR/zsh-variables-local.sh\" \
-\"$DEVELOPMENT_DIR\" && 
+\"$DEVELOPMENT_DIR\" &&
 echo $UPDATE_SUCCESS_MESSAGE";
 
 # navigation aliases
@@ -23,6 +23,7 @@ callKubectl() { kubectl "$@"; }
 # source other aliases
 test -f "$ZSH_DIR/aliases/cheats.sh" && source "$ZSH_DIR/aliases/cheats.sh"
 test -f "$ZSH_DIR/aliases/vscode.sh" && source "$ZSH_DIR/aliases/vscode.sh"
+test -f "$ZSH_DIR/aliases/docker.sh" && source "$ZSH_DIR/aliases/docker.sh"
 
 
 echo "(OK) sourced zsh shared aliases successfully"
